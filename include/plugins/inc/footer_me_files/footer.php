@@ -1,0 +1,1 @@
+<hr><center>FooterMe has been installed. Please go to admin plugins and click on FooterMe! to edit the footer straight from the settings page.</center><br>

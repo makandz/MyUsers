@@ -1,0 +1,1 @@
+<?php $db_host = "localhost"; $db_name = "myusers"; $db_user = "root"; $db_pass = ""; $db_table_prefix = "mu_"; ?>

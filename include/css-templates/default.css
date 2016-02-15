@@ -1,0 +1,157 @@
+/*All Main go to top*/
+.mainNavbar {
+	border-radius: 0;
+}
+.mainPanelBody {
+	border-radius: 0;
+}
+.mainError {
+	display: block;
+	margin: 5px;
+	background-color: #fffebe;
+	border: 1px solid #cbcbcb;
+	font-size: 89%;
+	margin-left: 2.5%;
+	width: 95%;
+}
+.mainSuccess {
+	display: block;
+	margin: 5px;
+	background-color: #bce9b5;
+	border: 1px solid #7ace6c;
+	font-size: 89%;
+	margin-left: 2.5%;
+	width: 95%;
+}
+.mainTitle {
+	text-align: center;
+	margin-bottom: 30px;
+}
+/*Rest page defined*/
+.indexDesc {
+	margin-top: -20px;
+	padding: 20px;
+	text-align: center;
+}
+.loginUsername {
+	margin-bottom: 10px;
+	width: 50%;
+}
+.loginPassword {
+	margin-bottom: 15px;
+	width: 50%;
+}
+.loginText, .resendText{
+	text-align: center;
+	margin-top: 15px;
+}
+.registerBox, .usettingsBox, .resendBox {
+	margin-bottom: 10px;
+	width: 50%;
+}
+.registerSecurity {
+	display: inline;
+	margin-top: 11px;
+	margin-right: 10px;
+}
+.registerSecurityBox {
+	display: inline;
+	width: 45.5%;
+	margin-left: -100px;
+	margin-bottom: 15px;
+}
+.registerText {
+	text-align: center;
+	margin-top: 15px;
+}
+.accountDesc {
+	margin-top: -20px;
+	padding: 20px;
+	text-align: center;
+}
+.accountPanel, .adminconPanel {
+	width: 50%;
+	margin-left: 25%;
+}
+.adminconBox{
+	margin-bottom: 10px;
+}
+.adminconButton {
+	float: right;
+}
+.adminusersButton {
+	margin-top: 10px;
+	width: 28%;
+	float: right;
+}
+.adminusersDButton {
+	width: 70%;
+	margin-top: 10px;
+}
+.adminuserTitle, .adminpermTitle, .adminpageTitle {
+	margin-top: 0px;
+}
+.adminuserTitle2, .adminpermTitle2 {
+	margin-top: 13px;
+}
+.adminuserBox {
+	margin-bottom: 5px;
+	margin-left: -3px;
+}
+.adminuserInfo {
+	margin-bottom: 5px;
+}
+.adminuserButton {
+	margin-left: -9px;
+	width: 100%;
+}
+.adminpermsButton, .adminpageButton  {
+	width: 100%;
+	margin-top: 10px;
+}
+.adminpermBox {
+	margin-bottom: 5px;
+}
+.adminpermAddMember {
+	margin-top: 10px;
+}
+.adminpermLabel {
+	margin-top: 10px;
+}
+.adminpermP {
+	margin-bottom: -27px;
+}
+.adminpermP2 {
+	margin-bottom: -12px;
+	margin-top: 5px;
+}
+.adminpermButton {
+	width: 100%;
+	margin-top: 10px;
+}
+.adminpagesButton {
+	width: 100%;
+	margin-top: 10px;
+}
+.adminpageLabel {
+	margin-right: 7px;
+	margin-bottom: -4px;
+}
+.adminpageLabel2 {
+	margin-top: -5px;
+}
+.adminpageLabel3 {
+	margin-top: 5px;
+}
+.menuWelcome {
+	float: right; 
+	margin-top: -20px;
+	margin-right: 10px;	
+}
+.menuAdmin {
+	margin-left: 10px;
+}
+.pluginButton {
+	width: 100%;
+	margin-top: -5px;
+}
