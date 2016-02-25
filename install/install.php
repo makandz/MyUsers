@@ -14,8 +14,9 @@ $successes = array();
 $mysqli = new mysqli($db_host, $db_user, $db_pass, $db_name);
 GLOBAL $mysqli;
 
+
 if(mysqli_connect_errno()) {
-	echo "Connection Failed: " . mysqli_connect_errno();
+	echo "Connection Failed: - Error" . mysqli_connect_errno();
 	exit();
 } ?>
 
@@ -321,7 +322,7 @@ if(isset($_GET["install"]))
 	
 	if(!$db_issue)
 		echo "<p><strong>Database setup complete, please delete the install folder or else you will be redirected back here.</strong></p>
-			<a class='btn btn-success' href='../index.php'>I have deleted my install folder</a>";
+			<a class='btn btn-success' href='../index.php'>I have deleted my install folder</a><br><br><a class='btn btn-default' href='../del-install.php'>Lazy to remove it manually? remove it with auto-remover script!</a>";
 	else
 	echo "	<p><strong>Install failed. Please check to see which of the above errors occured during the install.</strong></p>
 			<a class='btn btn-danger' href=\"index.php\">Try again</a>";
