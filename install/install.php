@@ -1,9 +1,9 @@
 <?php
-$db_host = $_GET["host"]; //Host address (most likely localhost)
-$db_name = $_GET["name"]; //Name of Database
-$db_user = $_GET["user"]; //Name of database user
-$db_pass = $_GET["pass"]; //Password for database user
-$db_table_prefix = $_GET["prefix"]; //Prefix of tables
+$db_host = $_POST["host"]; //Host address (most likely localhost)
+$db_name = $_POST["name"]; //Name of Database
+$db_user = $_POST["user"]; //Name of database user
+$db_pass = $_POST["pass"]; //Password for database user
+$db_table_prefix = $_POST["prefix"]; //Prefix of tables
 
 GLOBAL $errors; GLOBAL $successes;
 
@@ -57,9 +57,6 @@ if(mysqli_connect_errno()) {
 <center><h1>MyUsers Quick Installer</h1>
 
 <?php
-
-if(isset($_GET["install"]))
-{
 	$db_issue = false;
 	
 	$permissions_sql = "
@@ -326,11 +323,6 @@ if(isset($_GET["install"]))
 	else
 	echo "	<p><strong>Install failed. Please check to see which of the above errors occured during the install.</strong></p>
 			<a class='btn btn-danger' href=\"index.php\">Try again</a>";
-}
-else
-{
-	echo "<br><p>You are being redirected...</p><script>document.location = 'index.php';</script>";
-}
 
 echo "
 </body>
