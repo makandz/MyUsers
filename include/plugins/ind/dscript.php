@@ -1,5 +1,6 @@
-<p id="dscriptInformation" style="margin-bottom: 0px;"></p>
+<p id="dscriptInformation" style="margin-bottom: 0px;">Loading..</p>
 <script src="include/plugins/inc/dscript/dScript.js"></script>
 <script>
-	ihtml("dscriptInformation", "<b>dScript information </b>| Version: " + dScript_API_Version + " - Model: " + dScript_API_Model + " - Base: " + dScript_API_Base);
+	var dScript_API_Split = di.split(dScript_API, ";");
+	di.html("dscriptInformation", "<b>dScript information </b>| Version: " + dScript_API_Split[0] + " - Build: " + dScript_API_Split[1] + " - Base: " + dScript_API_Split[2]);
 </script>

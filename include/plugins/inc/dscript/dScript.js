@@ -1,54 +1,293 @@
 /*
 
-~ Version: 0.01a Apple Cake
+     _ ____            _       _   
+  __| / ___|  ___ _ __(_)_ __ | |_ 
+ / _` \___ \ / __| '__| | '_ \| __|
+| (_| |___) | (__| |  | | |_) | |_ 
+ \__,_|____/ \___|_|  |_| .__/ \__|
+                        |_|        
+
+~ Version: 0.01a Peach Soup
 ~ Developed by MastaCoder
 ~ Under MIT License :)
 
 */
 
-/*dScript API*/
-var dScript_API_Version; dScript_API_Version = "0.01a"; //Change this to your version of dScripts Version
-var dScript_API_Model; dScript_API_Model = "Official"; //Change this to the name of your dScript Version
-var dScript_API_Base; dScript_API_Base = "00"; //Don't change this so that people know the base of your dScript API
+// DSCRIPT VARIABLES AND SHORTCUTS //
+// ------------------------------- //
 
-/*Shortcuts*/
-var d; d = document;
-var c; c = console;
-var a; a = alert;
-var p; p = prompt;
+//dScript Information API
+var dScript_API = "0.01a;Peach Soup;Alpha";
 
-/*Variables for functions*/
-var doc_body = document.body.innerHTML;
-var doc_title = document.title;
-var replaceText;
+//dScript Shortcuts
+var d = document; //Shortcut for document.
+var c = console; //Shortcut for console.
+var a = alert; //Shortcut for alert();
+var p = prompt; //Shortcut for prompt();
+var m = Math; //Shortcut for Math.
+var db = document.body; //Shortcut for document.body.
 
-/*Default dScript Help commands*/
-function dScript() { /*Please run all functions with (); at the end if you see this!*/ c.warn("dScript v" + dScript_API_Version + " installed successfully!") }
-function dScript_help(help) { c.warn(":dScript Commands: some major functions of this script."); c.log("fRandomNumber: Generate a random number between 1 - 10."); c.log("fTemplate: Changes website to a bootstrap template."); c.log("dclear: Clears all content of a website body."); c.log("cspam: Spam the console with warnings."); c.log("ireplace: Quick replace key words in a text."); c.log("Many more commands can be found in the documentations."); c.warn(":dScript Shortcuts: some shortcuts you can use."); c.log("c = console"); c.log("d = document"); c.log("a = alerts"); c.log("p = prompt"); }
+//Variables required for some functions
+var doc_body = document.body.innerHTML; //Gets the document.body innerHTML on load
+var doc_title = document.title; //Gets the document.title on load
+var dScript_fadeSpeed = 1.00; //Required for some functions
+var dScript_fadeSpeed_ = 0.00 //Required for some functions
 
-/*dScript Functions*/
-function dhtml(db_html) { document.body.innerHTML = db_html; }
-function ihtml(d, d_html) { document.getElementById(d).innerHTML = d_html; }
-function ihref(d, d_href) { document.getElementById(d).href = d_href; }
-function ivalue(d, d_value) { document.getElementById(d).value = d_value; }
-function icolor(d, d_color) { document.getElementById(d).style.color = d_color; }
-function dcolor(db_color) { document.body.style.backgroundColor = db_color; }
-function ireplace(text, p_replace, replace_to) { replaceText = text.replace(p_replace, replace_to); }
-function dcheckpoint() { doc_body = document.body.innerHTML; }
-function dreset() { dhtml(doc_body); doc_title = d.title; }
-function dclear() { document.body.innerHTML = ""; }
-function cl(message) { c.log(message); }
-function dlocation(location) { document.location = location; }
-function dtitle(title) { document.title = title; }
+//dScript command to check install and information
+function dScript() {
+	var dScript_API_Split = dScript_API.split(";");
+	console.warn("dScript information:");
+	console.log("Version: " + dScript_API_Split[0]);
+	console.log("Build: " + dScript_API_Split[1]);
+	console.log("Base: " + dScript_API_Split[2]);
+}
 
-/*Random number function*/
-function fRandomNumber() { var selectionArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; var randomNumber = Math.floor(Math.random()*selectionArray.length); c.warn("Final Result: " + selectionArray[randomNumber]); c.log("To use the final result, please call: selectionArray[randomNumber]"); }
+//Required for dScript to show errors
+function dScript_error(string) {
+	console.error("dScript Error: " + string);
+}
 
-/*Template generator function*/
-function fTemplate() { document.body.innerHTML = "<html lang='en'> <head> <title>Bootstrap - Prebuilt Layout</title> <link href='http://localhost/CDN/unitedocument.min.css' rel='stylesheet'> </head> <body> <nav class='navbar navbar-default'> <div class='container-fluid'> <div class='navbar-header'> <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#defaultNavbar1'><span class='sr-only'>Toggle navigation</span><span class='icon-bar'></span><span class='icon-bar'></span><span class='icon-bar'></span></button> <a class='navbar-brand' href='#'>Brand</a></div> <div class='collapse navbar-collapse' id='defaultNavbar1'> <ul class='nav navbar-nav'> <li class='active'><a href='#'>Link<span class='sr-only'>(current)</span></a></li> <li><a href='#'>Link</a></li> <li class='dropdown'><a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-expanded='false'>Dropdown<span class='caret'></span></a> <ul class='dropdown-menu' role='menu'> <li><a href='#'>Action</a></li><li><a href='#'>Another action</a></li> <li><a href='#'>Something else here</a></li> <li class='divider'></li> <li><a href='#'>Separated link</a></li> <li class='divider'></li><li><a href='#'>One more separated link</a></li></ul></li></ul><form class='navbar-form navbar-left' role='search'><div class='form-group'><input type='text' class='form-control' placeholder='Search'></div><button type='submit' class='btn btn-default'>Submit</button></form><ul class='nav navbar-nav navbar-right'><li><a href='#'>Link</a></li><li class='dropdown'><a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-expanded='false'>Dropdown<span class='caret'></span></a><ul class='dropdown-menu' role='menu'><li><a href='#'>Action</a></li><li><a href='#'>Another action</a></li><li><a href='#'>Something else here</a></li><li class='divider'></li><li><a href='#'>Separated link</a></li></ul></li></ul></div> </div></nav><div class='container-fluid'><div class='row'><div class='col-md-6 col-md-offset-3'><h1 class='text-center'>Bootstrap Template </h1></div></div><hr></div><div class='container'><div class='row text-center'><div class='col-md-6 col-md-offset-3'>Click outside the blue container to select this <strong>row</strong>. Columns are always contained within a row. <strong>Rows are indicated by a dashed grey line and rounded corners</strong>. </div></div><hr><div class='row'><div class='text-justify col-sm-4'> Click here to select this<strong> column.</strong> Always place your content within a column. Columns are indicated by a dashed blue line. </div><div class='col-sm-4 text-justify'> You can <strong>resize a column</strong> using the handle on the right. Drag it to increase or reduce the number of columns.</div><div class='col-sm-4 text-justify'> You can <strong>offset a column</strong> using the handle on the left. Drag it to increase or reduce the offset. </div></div><hr><div class='row'><div class='text-center col-md-12'><div class='well'><strong> Easily build your page using the Bootstrap components from the Insert panel.</strong></div></div></div><div class='row'><div class='col-sm-4 text-center'><h4>Adding <strong>Buttons</strong></h4><p>Quickly add buttons to your page by using the button component in the insert panel. </p><button type='button' class='btn btn-info btn-sm'>Info Button</button><button type='button' class='btn btn-success btn-sm'>Success Button</button></div><div class='text-center col-sm-4'><h4>Adding <strong>Labels</strong></h4><p>Using the insert panel, add labels to your page by using the label component.</p><span class='label label-warning'>Info Label</span><span class='label label-danger'>Danger Label</span> </div><div class='text-center col-sm-4'><h4>Adding <strong>Glyphicons</strong></h4><p>You can also add glyphicons to your page from within the insert panel.</p><div class='row'><div class='col-xs-4'><span class='glyphicon glyphicon-menu-hamburger' aria-hidden='true'></span></div><div class='col-xs-4'><span class='glyphicon glyphicon-home' aria-hidden='true'> </span> </div><div class='col-xs-4'><span class='glyphicon glyphicon-envelope' aria-hidden='true'></span></div></div></div></div><hr><div class='row'><div class='text-center col-md-6 col-md-offset-3'><h4>Footer </h4><p>Copyright &copy; 2015 &middot; All Rights Reserved &middot; <a href='http://yourwebsite.com/' >My Website</a></p></div></div><hr></div><script src='js/jquery-1.11.2.min.js'></script><script src='js/bootstrap.js'></script></body></html>";}
+// DSCRIPT FUNCTIONS AND INFORMATION //
+// --------------------------------- //
 
-/*Console spam function*/
-function cspam() { c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)"); c.warn("dScript :)");}
+// ------ DOCUMENT FUNCTIONS ------- //
 
-/*Startup function*/
-function dload(startup) { startup; }
+var dd = {
+
+	//Commmand to change document innerHTML
+	html: function(data) {
+		document.body.innerHTML = data;
+	},
+
+	//Command to change document background color
+	color: function(color) {
+		document.body.style.backgroundColor = color;
+	},
+
+	//Command to catch document innerHTML under doc_body
+	checkpoint: function() {
+		doc_body = document.body.innerHTML;
+	},
+
+	//Command to reset document data to what is stored in the variables
+	reset: function() {
+		document.body.innerHTML = doc_body;
+		document.title = doc_title;
+	},
+
+	//Clear the document.body innerHTML
+	clear: function() {
+		document.body.innerHTML = "";
+	},
+
+	//Changes the document.location
+	location: function(url) {
+		document.location = url;
+	},
+
+	//Changes the document.title
+	title: function(string) {
+		document.title = string;
+	},
+
+	//Reloads the webpage
+	reload: function() {
+		document.location.reload();
+	}
+}
+
+// ------ ITEM_CHANGE FUNCTIONS ------- //
+
+var di = {
+
+	//Command to change element innerHTML
+	html: function(id, data) {
+		document.getElementById(id).innerHTML = data;
+	},
+
+	//Command to change element href
+	href: function(id, data) {
+		document.getElementById(id).href = data;
+	},
+
+	//Command to change element value
+	value: function(id, data) {
+		document.getElementById(id).value = data;
+	},
+
+	//Command to change element color
+	color: function(id, color) {
+		document.getElementById(id).style.color = color;
+	},
+
+	//Command to change element color
+	src: function(id, string) {
+		document.getElementById(id).src = string;
+	},
+
+	//Command to change element color
+	display: function(id, value) {
+		document.getElementById(id).style.display = value;
+	},
+
+	//Command to replace character(s) in a string
+	replace: function(string, data, new_data) {
+		string.replace(data, new_data);
+	},
+
+	//Splits a string by a character into an array
+	split: function(string, characters) {
+		return string.split(characters);
+	},
+
+	//Changes an elements width
+	width: function(id, value) {
+		document.getElementById(id).style.width = value;
+	},
+
+	//Get element width
+	height: function(id, value) {
+		document.getElementById(id).style.height;
+	}
+
+}
+
+// ------ CONSOLE FUNCTIONS ------- //
+
+//Log to the console, short form
+function cl(string) {
+	console.log(string);
+}
+
+//Log to the console under a warning, short form
+function cw(string) {
+	console.warn(string);
+}
+
+//Log to the console under a error, short form
+function ce(string) {
+	console.error(string);
+}
+
+//Clears the console. However, doesn't seem to work on some browsers
+function cc() {
+	console.clear();
+}
+
+//Makes the console push a number ascending by 1, starting at 1.
+function ccount(string) {
+	console.count(string);
+}
+
+// ------ DSCRIPT FUNCTIONS ------- //
+
+//All these function will need dScript written before them. eg. dScipt.ranInt(1, 3);
+var dScript = {
+
+	//Generates a random number between a set of numbers
+	ranInt: function(min, max) {
+		var mM = [min, max];
+	    if (min == max) { return min; }
+	    if (min < 0 || max < 0){ dScript_error("Invalid integer"); return; }
+	    if (min > max) { mM.reverse(); }
+	    return mM[0] + Math.floor(Math.random()*(mM[1]-mM[0]+1));
+	},
+
+	//Selects a random value in an array
+	ranArr: function(array) {
+		var ds_ = Math.floor(Math.random()*array.length);
+		return array[ds_];
+	},
+
+	//Generates a random string to your length
+	ranStr: function(integer) {
+		//Error catch
+		if (integer > 0) {} else { dScript_error("Invalid integer"); return 0; }
+		//End of Error catch
+
+		var dScript_randomString = "";
+		var dScript_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+		for (var dScript_i = 0; dScript_i < integer; dScript_i++)
+		dScript_randomString += dScript_characters.charAt(Math.floor(Math.random() * dScript_characters.length));
+		return dScript_randomString;
+	},
+
+	//Shows an 'are you sure' message when user clicks to leave page
+	leaveRequest: function(string) {
+		function goodbye(e) {
+	        if(!e) e = window.event;
+		        e.cancelBubble = true;
+		        e.returnValue = string;
+		        if (e.stopPropagation) {
+			        e.stopPropagation();
+			        e.preventDefault();
+		        }
+	        }
+	    window.onbeforeunload=goodbye; 
+	},
+
+	//Fades out element at the amount of seconds desired (integer is the speed)
+	fadeOut: function(id, integer) {
+		//Error catch
+		if (integer > 0) {} else { dScript_error("Invalid integer"); return 0; }
+		//End of Error catch
+
+		if (dScript_fadeSpeed > 0) {
+			setTimeout(function() {
+				dScript_fadeSpeed = dScript_fadeSpeed - 0.01;
+				document.getElementById(id).style.opacity = dScript_fadeSpeed;
+			}, integer);
+			setTimeout(function() {
+				fFadeOut(id, integer);
+			}, integer);
+		} else {
+			dScript_fadeSpeed = 1.00;
+		}
+	},
+
+	//Fades in element at the amount of seconds desired (integer is the speed)
+	fadeIn: function(id, integer) {
+		//Error catch
+		if (integer > 0) {} else { dScript_error("Invalid integer"); return 0; }
+		//End of Error catch
+
+		if (dScript_fadeSpeed_ < 1) {
+			setTimeout(function(){
+				dScript_fadeSpeed_ = dScript_fadeSpeed_ + 0.01;
+				document.getElementById(id).style.opacity = dScript_fadeSpeed_;
+			}, integer);
+			setTimeout(function(){
+				fFadeIn(id, integer);
+			}, integer);
+		} else {
+			dScript_fadeSpeed_ = 0.00;
+		}
+	},
+
+
+	//Gets and stores the ?string= after URL and splits the = into array
+	getSearch: function() {
+		if (document.location.search.length > 0) {
+			return document.location.search.split("&");
+		}
+	},
+
+	//Log a message a specific number of times in the console
+	consoleSpam: function(string, integer) {
+		//Error catch
+		if (integer > 0) {} else { dScript_error("Invalid integer"); return 0; }
+		//End of Error catch
+
+		var dScript_variable = 1;
+		logMessage();
+		function logMessage() {
+			if (dScript_variable <= integer) {
+				console.log(string);
+				dScript_variable = dScript_variable + 1;
+				logMessage();
+			}
+		}
+	}
+};
+
+//End of script
