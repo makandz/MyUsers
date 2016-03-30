@@ -1,6 +1,6 @@
 <?php
+
 /*
-MyUsers: v0.27b
 UserCake: v2.0.2
 */
 
