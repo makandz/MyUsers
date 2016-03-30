@@ -14,10 +14,6 @@ And you're good to go, have fun! :)
 ## Contributing
 All you have to do is fork it and make a pull request if you find anything awesome that you want to share! Remember, this project is under the MIT license, so you can take it and build your own repo or project with it without the need of licensing or anything, complete and open source for everyone!
 
-## Major releases
-#### v - 1.00s
-- First stable release of MyUsers
-
 ## Credits
 I'd like to thank everyone down at the UserCake team that built the core of this project. Really all I did was made it better!
 
