@@ -1,4 +1,5 @@
-Updates for this will be slow because of school and my other projects.
+# -- NOTICE --
+Do not use this project for actual production use, it's extremely outdated and not secure! (ahem, mysql instead of mysqli/pdo)
 
 # MyUsers
 A simple members system built in MySQL and PHP which allows users to register and login to there accounts. The administrator has options between setting roles onto specific accounts, and has the option to add more rows, or anything they want really in a flexible manner. Easy installation and support for almost every server from shared hosting to VPS hosting.
